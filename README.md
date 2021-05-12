@@ -12,11 +12,11 @@ Current build status: Under development
 Getting Started
 
   Step 1:
-You will need an API key from The One API this requires entering a valid email and registering by creating a password.  The key will be referenced in this code as:
+You will need an API key from The One API ( https://the-one-api.dev/ ) this requires entering a valid email and registering by creating a password.  The key will be referenced in this code as:
 ‘’’
 ENV[“KEY”]
 ‘’’
-Therefore within your hidden .env file you that you’ve used the dotenv gem to hide, you will assign this hash key as:
+Therefore within your hidden .env file that you’ve used the dotenv gem to hide ( https://www.rubydoc.info/gems/dotenv/2.0.0 ), you will assign this hash key as:
 ‘’’
 KEY=YOUR_PERSONAL_API_KEY_FROM_THE_ONE_API_HERE
 ‘’’
