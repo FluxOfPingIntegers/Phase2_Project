@@ -59,7 +59,8 @@ Acknowledgments
     • The very supportive slack community at Flatiron
 
 Tech/Gems used
-
+    • Ruby
+    • All Ruby gems can be found in the Gemfile
 
 
 License
