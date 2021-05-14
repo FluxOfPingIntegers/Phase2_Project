@@ -7,6 +7,7 @@ gem "dotenv"
 gem "activerecord"
 gem "sqlite3"
 gem 'sinatra-activerecord'
+gem 'bcrypt'
 
 gem "open-uri"
 gem "net-http"
