@@ -5,15 +5,8 @@ class User < ActiveRecord::Base
   has_many :quotes, through: :favoritequotes
   has_many :characters, through: :favoritequotes
   has_secure_password
-
-#  def password=(string)
-#    self.password_digest = BCrypt::Password.create(string)
-#  end
-#
-#  def authenticate(password)
-#    bcrypt = BCrypt::Password.new(self.password_digest)
-#    bcrypt == password
-#  end
+  validates :username, uniqueness: :true # failure = self.errors.full_messages.to_sentence = "Username has already been taken" 
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Must be a valid email address format" } #needs testing.
 
 
 end
