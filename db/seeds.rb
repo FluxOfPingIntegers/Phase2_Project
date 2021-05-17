@@ -16,4 +16,4 @@ elrond = Character.find_or_create_by(name: "Elrond", img: "public/images/Elrond.
 saruman = Character.find_or_create_by(name: "Saruman", img: "public/images/Saruman.jpg", api_id: "5cd99d4bde30eff6ebccfea4")
 bilbo = Character.find_or_create_by(name: "Bilbo Baggins", img: "public/images/bilbo.jpg", api_id: "5cd99d4bde30eff6ebccfc38")
 
-
+LOTRImporter.seed #computationally heavy
