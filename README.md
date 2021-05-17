@@ -21,6 +21,16 @@ Therefore within your hidden .env file that you’ve used the dotenv gem to hide
 KEY=YOUR_PERSONAL_API_KEY_FROM_THE_ONE_API_HERE
 ‘’’
 
+  Step 2:
+You will also need to set a password for the sessions hash within you .env file.  This password for your sessions hash is referenced in this code as:
+```
+ENV["SESSION_SECRET"]
+```
+Therefore, within your hidden .env file you need to assign the hash key as:
+```
+SESSION_SECRET=YOUR_SESSION_SECRET_PASSWORD
+```
+
 
 
 Outside Sources Referenced For Data
