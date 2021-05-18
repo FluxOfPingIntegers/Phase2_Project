@@ -12,10 +12,6 @@ class UsersController < ApplicationController
     erb :"users/new"
   end
 
-  get "/login" do
-    erb :"sessions/new"
-  end
-
   post "/users" do
     user = User.create(params["user"])
     session[:user_id] = user.id
@@ -30,6 +26,10 @@ class UsersController < ApplicationController
     else
       redirect "/login"
     end 
+  end
+
+  get "/login" do
+    erb :"sessions/new"
   end
 
   get "/logout" do
