@@ -1,8 +1,21 @@
 class CharactersController < ApplicationController
 
-get "/characters" do
+  get "/characters" do
     @characters = Character.all
     erb :'characters/index'
-end
+  end
+
+  # get "/characters/new"
+
+  # post "/characters"
+
+  get "/characters/:id" do
+    if logged_in?
+      @character = Character.find(params[:id])
+      erb :'characters/show'
+    else
+      redirect "/"
+    end
+  end
 
 end
