@@ -18,6 +18,14 @@ class UsersController < ApplicationController
     redirect "/"
   end
 
+  get "/users/:id" do
+    @user = User.find(params[:id])
+    erb :"users/show"
+  end
+
+
+
+
   post "/sessions" do
     user = User.find_by_username(params["user"]["username"])
     if user && user.authenticate(params["user"]["password"])
