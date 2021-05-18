@@ -9,5 +9,25 @@ class User < ActiveRecord::Base
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Must be a valid email address" } #needs testing.
   validates :password, length: { in: 4..20 }
 
+  def rank
+    rank = self.quotes.size + self.comments.size
+    case rank
+    when 0..9
+      "Newb"
+    when 10..19
+      "Ranger"
+    when 20..39
+      "Maiar"
+    when 40..79
+      "Istari"
+    when 80..99
+      "Valar"
+    when 100
+      "Iluvatar"
+    else
+      "Nerd"
+    end
+
+  end
 
 end
