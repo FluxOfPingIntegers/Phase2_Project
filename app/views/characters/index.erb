@@ -1,0 +1,11 @@
+<h1>A List Of The Famous Folk Of Middle Earth</h1>
+<h3>must be signed in to view</h3>
+<ul>
+  <% @characters.each do |character| %>
+    <% if logged_in? %>
+      <li><a href="/characters/<%= character.id.to_s %>"><%= character.name %></a></li>
+    <% else %>
+      <li><%= character.name %></li>
+    <% end %>
+  <% end %>
+</ul>
