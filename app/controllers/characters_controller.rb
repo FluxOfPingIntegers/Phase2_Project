@@ -1,0 +1,5 @@
+class CharactersController < ApplicationRecord
+
+
+
+end

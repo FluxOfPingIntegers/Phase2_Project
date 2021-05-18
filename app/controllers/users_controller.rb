@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     erb :"users/show"
   end
 
-
+# STILL NEED "get '/user/:id/edit' , put '/user/:id' , delete '/user/:id'"
 
 
   post "/sessions" do
