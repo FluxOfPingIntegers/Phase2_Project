@@ -7,17 +7,17 @@
 <% if !@character.comments.empty? %>
   <p>Here is the most recent comment from a fan</p>
   <strong><%= @character.comments[-1].user.username %></strong>: <%= @character.comments[-1].content %>
+  <br>
+  <form action="/characters/<%= @character.id %>/comments" method="post">
+    <label for="content">Your comment:</label><br>
+    <input type="text" id="content" name="comment[content]"><br>
+
+    <input type="hidden" id="<%= @character.id %>" name="comment[character_id]" value="<%= @character.id %>"><br>
+    <input type="submit" value="Submit">
+  </form>
 <% else %>
-  <p>Be the first to comment!<p>
+    <h3>This character currently has no comments!<h3><br>
+    <p>Would you like to be the first to comment??? Click <a href="/characters/<%=@character.id%>/comments/new">here</a>!!!</p>
 <% end %>
-<br>
-<form action="/characters/<%= @character.id %>/comments" method="post">
-  <label for="content">Comment:</label><br>
-  <input type="text" id="content" name="comment[content]"><br>
-
-  <input type="hidden" id="<%= @character.id %>" name="comment[character_id]" value="<%= @character.id %>"><br>
-
-  <input type="submit" value="Submit">
-</form>
 <!-- this needs to be changed to a link to view all the comments for this character
  and a form both here and on that page to make new comments. -->

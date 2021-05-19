@@ -10,7 +10,17 @@ class CharacterCommentsController < ApplicationController
   end
 
   get '/characters/:character_id/comments/new' do
-
+    if logged_in?
+      @user = User.find(session[:user_id])
+      @character = Character.find(params[:character_id])
+    else
+      redirect "/login"
+    end
+    if @character.comments.empty?
+      erb :'comments/new'
+    else
+      redirect "/characters/#{@character.id}/comments"
+    end
   end
 
   post '/characters/:character_id/comments' do

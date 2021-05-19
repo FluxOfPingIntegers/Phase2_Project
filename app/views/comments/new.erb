@@ -1,0 +1,10 @@
+<h2><%=@user.username%></h2>
+<p>is about to submit the FIRST comment for:</p>
+<h1><%= @character.name %></h1>
+  <form action="/characters/<%= @character.id %>/comments" method="post">
+    <label for="content">First comment for <%=@character.name%>:</label><br>
+    <input type="text" id="content" name="comment[content]"><br>
+
+    <input type="hidden" id="<%= @character.id %>" name="comment[character_id]" value="<%= @character.id %>"><br>
+    <input type="submit" value="Submit">
+  </form>
