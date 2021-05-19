@@ -5,13 +5,10 @@ class CharactersController < ApplicationController
     erb :'characters/index'
   end
 
-  # get "/characters/new"
-
-  # post "/characters"
-
   get "/characters/:id" do
     if logged_in?
       @character = Character.find(params[:id])
+      @users = User.all
       erb :'characters/show'
     else
       redirect "/"

@@ -1,3 +1,17 @@
+
 <h1><%= @character.name %></h1><br>
-<img src="<%= @character.img %>" alt="Image not available">
+<img src="<%= @character.img %>" alt="Image not available"> <!-- needs work -->
 <br>
+<h3>The fans of this character have the following comments</h3>
+<br>
+<% if !@character.comments.empty? %>
+  <ul>
+    <% @character.comments.each do |comment|%>
+    <li><%= comment.user.username %>: <%= comment.content %></li>
+  <ul>
+  <% end %>
+<% else %>
+  <p>Be the first to comment!<p>
+  <% end %>
+<!-- this needs to be changed to only the last 5 comments for this character,
+as well as a link to view all the comments for this character and a form both here and on that page to make new comments. -->

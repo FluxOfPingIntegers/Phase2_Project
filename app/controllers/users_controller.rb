@@ -23,6 +23,18 @@ class UsersController < ApplicationController
     erb :"users/show"
   end
 
+  get "/user/:id/edit" do
+  binding.pry    
+  end
+
+  put '/user/:id' do
+    binding.pry
+  end
+
+  delete '/user/:id' do
+  binding.pry    
+  end
+
 # STILL NEED "get '/user/:id/edit' , put '/user/:id' , delete '/user/:id'"
 
 
