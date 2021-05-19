@@ -1,6 +1,21 @@
 <h1><%= @user.username %></h1>
-<p>More date will go here</p>
-
+<p>Your current info is:</p>
+<p>Username: <%= @user.username %>, Email: <%= @user.email %><p>
+<p>Click <a href="/user/<%=@user.id.to_s%>/edit">here</a> to edit your information.
+<p>Here is a list of comments you have made:</p><br>
+  <% if !@user.comments.empty? %>
+    <ul>
+    <% array = @user.comments.sort_by {|comment| comment.character} %>
+    <% array.each do |comment| %>
+      <p>On <strong><%= comment.character.name %></strong>, you said: <p>
+      <li>"<%= comment.content %>"</li>
+      <p>Click <a href="characters/<%=comment.character.id.to_s%>/comments/<%=comment.id.to_s%>/edit">here</a> to edit this comment.</p>
+      <br>
+    <% end %>
+    </ul>
+  <% else %>
+  <p>You have made no comments!<p>
+  <% end %>
 
 <br>
 <p>You can view a log of other middle earth folk <a href="/users">here</a>

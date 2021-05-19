@@ -1,7 +1,12 @@
 class CharacterCommentsController < ApplicationController
 
   get '/characters/:character_id/comments' do
-
+    if logged_in?
+      @character = Character.find(params[:character_id].to_i)
+      erb :'comments/show'
+    else
+      redirect "/login"
+    end
   end
 
   get '/characters/:character_id/comments/new' do
@@ -9,13 +14,12 @@ class CharacterCommentsController < ApplicationController
   end
 
   post '/characters/:character_id/comments' do
-    binding.pry
     comment = params["comment"]
     comment["character_id"] = comment["character_id"].to_i
     comment["user_id"] = session[:user_id]
     comment["timestamp"] = Time.now.to_i
-    Comment.create(comment)
-    redirect "/characters/:id"
+    comment = Comment.create(comment)
+    redirect "/characters/#{comment.character_id}"
   end
 
   get '/characters/:character_id/comments/:id' do

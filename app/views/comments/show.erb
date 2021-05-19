@@ -1,0 +1,9 @@
+<h1>users have submitted all of the following comments to <%= @character.name %></h1>
+  <br>
+  <% if !@character.comments.empty? %>
+    <% @character.comments.reverse.each do |comment| %>
+      <p><strong><%= comment.user.username %></strong>: <%= comment.content %></p><br>
+    <% end %>
+  <% else %>
+    <h3>This character currently has no comments!<h3><br>
+  <% end %>
