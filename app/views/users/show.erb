@@ -1,7 +1,8 @@
 <h1><%= @user.username %></h1>
 <p>Your current info is:</p>
 <p>Username: <strong><%= @user.username %></strong>, Email: <strong><%= @user.email %></strong><p>
-<p>Click <a href="/user/<%=@user.id.to_s%>/edit">here</a> to edit your information.
+<p>Click <a href="/user/<%=@user.id.to_s%>/edit">here</a> to edit your information or delete this account.
+<p>You can view a log of other middle earth folk <a href="/user">here</a><p>
 <p>Here is a list of comments you have made:</p><br>
   <% if !@user.comments.empty? %>
     <ul>
@@ -16,6 +17,3 @@
   <% else %>
   <p>You have made no comments!<p>
   <% end %>
-
-<br>
-<p>You can view a log of other middle earth folk <a href="/user">here</a>

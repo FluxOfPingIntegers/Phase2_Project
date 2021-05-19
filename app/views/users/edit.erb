@@ -12,3 +12,9 @@
 
   <input type="submit" value="Update!">
 </form>
+
+<p>If you wish to submit your soul to the Halls of Mandos, and delete your account.  Please click the following button:</p>
+  <form action="/user/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete This Account">
+  </form>

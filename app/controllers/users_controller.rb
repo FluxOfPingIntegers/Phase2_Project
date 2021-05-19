@@ -48,10 +48,17 @@ class UsersController < ApplicationController
   end
 
   delete '/user/:id' do
-    binding.pry    
+    user = User.find(params[:id])
+    if user == current_user
+      user.comments.destroy_all
+      user.destroy
+      session.clear
+      redirect "/"
+    else
+      redirect "/"
+    end   
   end
 
-# STILL NEED "get '/user/:id/edit' , put '/user/:id' , delete '/user/:id'"
 
 
   post "/sessions" do
