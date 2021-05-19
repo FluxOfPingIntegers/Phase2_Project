@@ -2,23 +2,23 @@ require 'pry'
 
 class UsersController < ApplicationController
 
-  get "/users" do
+  get "/user" do
     @users = User.all
     erb :"users/index"
   end
 
-  get "/users/new" do
+  get "/user/new" do
 
     erb :"users/new"
   end
 
-  post "/users" do
+  post "/user" do
     user = User.create(params["user"])
     session[:user_id] = user.id
     redirect "/"
   end
 
-  get "/users/:id" do
+  get "/user/:id" do
     if logged_in?
       @user = User.find(session[:user_id])
       erb :"users/show"
@@ -36,8 +36,15 @@ class UsersController < ApplicationController
     end
   end
 
-  put '/user/:id' do
-    binding.pry
+  patch '/user/:id' do
+    user = User.find(params[:id])
+    if user == current_user
+      if user.update(params[:user])
+        redirect "/user/#{user.id}"
+      else
+        redirect "/user/#{user.id}/edit"
+      end
+    end
   end
 
   delete '/user/:id' do

@@ -30,7 +30,7 @@ class CharacterCommentsController < ApplicationController
 
   end
 
-  put '/characters/:character_id/comments/:id' do
+  patch '/characters/:character_id/comments/:id' do
 
   end
 

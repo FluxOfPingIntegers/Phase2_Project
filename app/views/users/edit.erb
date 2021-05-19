@@ -1,0 +1,14 @@
+<h1>Edit information for <strong><%= @user.username %></h1>
+<form action="/user/<%=@user.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">  
+  <p>Current Username: <%= @user.username %></p>
+  <label for="username">Desired Username:</label><br>
+  <input type="text" id="username" name="user[username]"><br>
+  <p>Current Email: <%=@user.email%></p>
+  <label for="email">New Email Address:</label><br>
+  <input type="text" id="email" name="user[email]"><br>
+  <label for="password">New Password:</label><br>
+  <input type="password" id="password" name="user[password]"><br>
+
+  <input type="submit" value="Update!">
+</form>
