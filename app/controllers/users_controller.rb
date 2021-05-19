@@ -20,15 +20,20 @@ class UsersController < ApplicationController
 
   get "/users/:id" do
     if logged_in?
-    @user = User.find(session[:user_id])
-    erb :"users/show"
+      @user = User.find(session[:user_id])
+      erb :"users/show"
     else
       redirect "/login"
     end
   end
 
   get "/user/:id/edit" do
-  binding.pry    
+    if logged_in?
+      @user = User.find(session[:user_id])
+      erb :"users/edit"
+    else
+      redirect "/login"
+    end
   end
 
   put '/user/:id' do
@@ -36,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   delete '/user/:id' do
-  binding.pry    
+    binding.pry    
   end
 
 # STILL NEED "get '/user/:id/edit' , put '/user/:id' , delete '/user/:id'"
