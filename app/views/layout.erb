@@ -9,7 +9,7 @@
 
   <nav>
   <% if logged_in? %>
-    Currently signed in as <strong><%= current_user.username %></strong>, <a href="/users/<%= current_user.id.to_s %>">Edit Profile</a>
+    Currently signed in as <strong><%= current_user.username %></strong>, <a href="/users/<%= current_user.id.to_s %>">View Profile</a>
      OR <a href="/logout">Log Out</a>
   <% else %>
     <a href="/users/new">Sign Up!</a> OR <a href="/login">Login!</a>
