@@ -10,7 +10,7 @@
     <% array.each do |comment| %>
       <p>On <strong><%= comment.character.name %></strong>, you said: <p>
       <li>"<%= comment.content %>"</li>
-      <p>Click <a href="characters/<%=comment.character.id.to_s%>/comments/<%=comment.id.to_s%>/edit">here</a> to edit this comment.</p>
+      <p>Click <a href="/characters/<%=comment.character.id%>/comments/<%=comment.id%>/edit">here</a> to edit this comment.</p>
       <br>
     <% end %>
     </ul>

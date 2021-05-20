@@ -3,7 +3,7 @@ class CharacterCommentsController < ApplicationController
   get '/characters/:character_id/comments' do
     if logged_in?
       @character = Character.find(params[:character_id].to_i)
-      erb :'comments/show'
+      erb :'comments/index'
     else
       redirect "/login"
     end
