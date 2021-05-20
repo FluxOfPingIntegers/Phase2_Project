@@ -6,3 +6,9 @@
   <input type="hidden" id="timestamp" name="comment[timestamp]" value="<%=Time.now.to_i%>">
   <input type="submit" value="Update!">
 </form>
+<br>
+<p>Some things are best left unsaid.  If you would like to delete this comment, please click the following button:</p>
+  <form action="/characters/<%=@comment.character_id%>/comments/<%=@comment.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Throw it into the fire! (delete)">
+  </form>

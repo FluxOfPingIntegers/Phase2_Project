@@ -62,7 +62,7 @@ class CharacterCommentsController < ApplicationController
 
   delete '/characters/:character_id/comments/:id' do
     comment = Comment.find(params[:id].to_i)
-    if current_usr == comment.user && comment.character_id == params[:character_id].to_i
+    if current_user == comment.user && comment.character_id == params[:character_id].to_i
       comment.destroy
       redirect "/characters/#{comment.character_id}/comments"
     else
