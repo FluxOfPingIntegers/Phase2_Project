@@ -1,0 +1,45 @@
+
+body {
+    text-align: center;
+    font-family: serif;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    }
+
+a {
+    color: yellow;
+  }
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+   }
+
+div.pages {
+    margin: auto;
+    width: 50%;
+    border: 3px solid red;
+    padding: 10px;
+    background: transparent;
+    background-color: rgba(128, 0, 128, 0.5);
+  }
+
+img {
+    float: center;
+    width:  350px;
+    height: 425px;
+    object-fit: cover;
+    }
+
+div.text#content {
+    text-align: center;
+    font-family: serif;
+    color: white;
+}
+
+div.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

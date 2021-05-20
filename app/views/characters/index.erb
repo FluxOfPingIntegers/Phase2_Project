@@ -1,5 +1,6 @@
 <h1>A List Of The Famous Folk Of Middle Earth</h1>
 <h3>must be signed in to view</h3>
+<div class="center">
 <ul>
   <% @characters.each do |character| %>
     <% if logged_in? %>
@@ -9,3 +10,4 @@
     <% end %>
   <% end %>
 </ul>
+</div>
