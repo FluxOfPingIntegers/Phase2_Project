@@ -6,7 +6,7 @@
       <br>
       <li><strong><%= comment.user.username %></strong>: "<%= comment.content %>"</li>
       <% if comment.user_id == session[:user_id] %>
-        Click <a href="/characters/<%=comment.character.id%>/comments/<%=comment.id%>/edit">here</a> to edit this comment.
+        Click <a href="/characters/<%=comment.character.id%>/comments/<%=comment.id%>/edit">here</a> to edit this comment.<br>
       <% end %>
     <% end %>
     </ul>

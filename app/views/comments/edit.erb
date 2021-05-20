@@ -1,0 +1,8 @@
+<form action="/characters/<%= @comment.character_id %>/comments/<%=@comment.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">  
+  <p><strong>Current Content:</strong> "<%= @comment.content %>"</p>
+  <label for="content">New content:</label><br>
+  <input type="text" id="content" name="comment[content]"><br>
+  <input type="hidden" id="timestamp" name="comment[timestamp]" value="<%=Time.now.to_i%>">
+  <input type="submit" value="Update!">
+</form>
