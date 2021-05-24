@@ -5,7 +5,7 @@ class LOTRImporter
   
   def self.seed
     LOTRImporter.api
-    LOTRImporter.seed
+    LOTRImporter.quotes
   end
 
   def self.api
@@ -38,7 +38,10 @@ class LOTRImporter
     Quote.all.each do |q|
       if q.content.size < 9
         q.delete
-      end  
+      end
+      q.content.delete!(",")
+      q.content.squish!
+      q.save
     end
   end
 

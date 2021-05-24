@@ -17,3 +17,8 @@ saruman = Character.find_or_create_by(name: "Saruman", img: "public/images/Sarum
 bilbo = Character.find_or_create_by(name: "Bilbo Baggins", img: "public/images/bilbo.jpg", api_id: "5cd99d4bde30eff6ebccfc38")
 
 LOTRImporter.seed #computationally heavy
+Quote.all.each do |q|
+  q.content.delete!(",")
+  q.content.squish!
+  q.save
+end  
