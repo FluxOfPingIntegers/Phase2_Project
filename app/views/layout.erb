@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8" />
   <title>ThePrancingPages</title>
-  <link rel="stylesheet" type="text/css" href="/styles/style.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/style.css?version=1"/>
 </head>
 
 <body>
@@ -17,14 +17,12 @@
     | <a href="/">Home<a> | <a href="/characters">View All Characters</a>
   </nav>
 
-  <div class="background" id="background">
-    <div class="border" id="border">
-    </div>
-  </div>
+  <div class="border" id="border">
 
-  <div class="pages">
-    <div class="text" id="content">
-      <%= yield %>
+    <div class="pages">
+      <div class="text" id="content">
+        <%= yield %>
+      </div>
     </div>
   </div>
 

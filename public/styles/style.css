@@ -1,21 +1,25 @@
 
 body {
-    margin: 0;
+    margin: auto;
     text-align: center;
     font-family: serif;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
+
+    height: 100vh;
+    width: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: 50%, 50%;
+    background-image: url("/images/background.jpg");
     }
 
-div.background {
-        height: 100vh;
-        width: 100vh;
-        position: relative;
-        background-size: cover;
-        background-position: 50%, 50%;
-        background-image: url("images/background.jpg");
-        background-color: #cccccc;
-       }
+nav {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+}
 
 a {
     color: yellow;
@@ -26,14 +30,33 @@ ul {
     list-style-position: inside;
    }
 
+div.border {
+    height: 95%;
+    width: 99.4%;
+    position: relative;
+    border: 3px solid red;
+    background: transparent;
+    background-color: rgba(120, 0, 128, 0.5);
+}
+
+div.border.pages {
+    height: 90%;
+    width: 99.5%;
+    text-align: center;
+    background: solid;
+}
+
+/*   
 div.pages {
     margin: auto;
+    text-align: center;
     width: 50%;
     border: 3px solid red;
     padding: 10px;
     background: transparent;
     background-color: rgba(128, 0, 128, 0.5);
   }
+*/
 
 img {
     float: center;
