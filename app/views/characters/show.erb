@@ -5,7 +5,7 @@
 <h3>Click <a href="/characters/<%= @character.id %>/comments">here</a> for a list of all of this characters comments from fans!</h3>
 <% if !@character.comments.empty? %>
   <p>Here is the most recent comment from a fan</p>
-  <strong><%= @character.comments[-1].user.username %></strong>: <%= @character.comments[-1].content %></strong>
+  <u><strong><%= @character.comments[-1].user.username %></strong>: <%= @character.comments[-1].content %></u>
   <br>
   <form action="/characters/<%= @character.id %>/comments" method="post">
     <label for="content">Your comment:</label><br>
