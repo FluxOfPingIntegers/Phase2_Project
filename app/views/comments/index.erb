@@ -1,4 +1,4 @@
-<h1>users have submitted all of the following comments to <%= @character.name %></h1>
+<h1>users have submitted all of the following comments to <a href="/characters/<%= @character.id %>"><%= @character.name %></a></h1>
   <br>
   <% if !@character.comments.empty? %>
     <ul>

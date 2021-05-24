@@ -32,8 +32,8 @@ ul {
 
 div.border {
     height: 95%;
-    width: 99.4%;
-    position: relative;
+    width: 48.5%;
+    position: fixed;
     border: 3px solid red;
     background: transparent;
     background-color: rgba(120, 0, 128, 0.5);
@@ -44,6 +44,7 @@ div.border.pages {
     width: 99.5%;
     text-align: center;
     background: solid;
+    position: relative;
 }
 
 /*   

@@ -1,18 +1,17 @@
 
 <h1><%= @character.name %></h1><br>
-<img src="<%= @character.img %>" alt="Image not available"> <!-- needs work -->
+<img src="<%= @character.img %>" alt="Image not available">
 <br>
 <h3>Click <a href="/characters/<%= @character.id %>/comments">here</a> for a list of all of this characters comments from fans!</h3>
-<br>
 <% if !@character.comments.empty? %>
   <p>Here is the most recent comment from a fan</p>
-  <strong><%= @character.comments[-1].user.username %></strong>: <%= @character.comments[-1].content %>
+  <strong><%= @character.comments[-1].user.username %></strong>: <%= @character.comments[-1].content %></strong>
   <br>
   <form action="/characters/<%= @character.id %>/comments" method="post">
     <label for="content">Your comment:</label><br>
     <input type="text" id="content" name="comment[content]"><br>
 
-    <input type="hidden" id="<%= @character.id %>" name="comment[character_id]" value="<%= @character.id %>"><br>
+    <input type="hidden" id="<%= @character.id %>" name="comment[character_id]" value="<%= @character.id %>">
     <input type="submit" value="Submit">
   </form>
 <% else %>
