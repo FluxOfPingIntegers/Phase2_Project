@@ -25,4 +25,18 @@ class CharactersController < ApplicationController
     end
   end
 
+  post "/characters/:id/quotes" do
+    if params.has_key?("quote_id")
+      user = current_user
+      if user.favoritequotes.select{|f| f.character_id == params[:id].to_i}.empty?
+        favoritequote = {quote_id: params[:quote_id].to_i, character_id: params[:id].to_i, user_id: session[:user_id]}
+        FavoriteQuote.create(favoritequote)
+      else
+      binding.pry
+      end
+    else
+      redirect :'quotes/show'
+    end
+  end
+
 end

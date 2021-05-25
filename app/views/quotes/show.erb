@@ -1,2 +1,11 @@
 <h3>The following are quotes from:</h3>
 <h1><a href="/characters/<%= @character.id %>"><%= @character.name %></a></h1>
+<h2>Please Select Your Favorite Quote For This Character</h2>
+  <form action="/characters/<%= @character.id %>/quotes" method="post">
+  <% @character.quotes.each do |q| %>
+    <input type="radio" name="quote_id" value="<%= q.id %>">
+    <label for="quote_id"><%= q.content %></label>
+    <br>
+  <% end %>
+  <button type="submit">Submit</button>
+  </form>

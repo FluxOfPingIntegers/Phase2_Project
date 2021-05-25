@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_17_023018) do
+ActiveRecord::Schema.define(version: 2021_05_25_155835) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_05_17_023018) do
     t.integer "timestamp"
   end
 
-  create_table "favoritequotes", force: :cascade do |t|
+  create_table "favorite_quotes", force: :cascade do |t|
     t.integer "quote_id"
     t.integer "character_id"
     t.integer "user_id"
