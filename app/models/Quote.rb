@@ -1,8 +1,8 @@
 
 class Quote < ActiveRecord::Base
   belongs_to :character
-  has_many :favoritequotes
-  has_many :users, through: :favoritequotes
+  has_many :favorite_quotes
+  has_many :users, through: :favorite_quotes
 
 
 

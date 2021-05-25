@@ -19,6 +19,7 @@ class CharactersController < ApplicationController
     if logged_in?
       @character = Character.find(params[:id])
       @user = User.find(session[:user_id])
+      @favoritequote = FavoriteQuote.all.find_by({character_id: @character.id, user_id: @user.id})
       erb :'quotes/show'
     else
       redirect "/login"
@@ -28,14 +29,17 @@ class CharactersController < ApplicationController
   post "/characters/:id/quotes" do
     if params.has_key?("quote_id")
       user = current_user
-      if user.favoritequotes.select{|f| f.character_id == params[:id].to_i}.empty?
+      if user.favorite_quotes.select{|f| f.character_id == params[:id].to_i}.empty?
         favoritequote = {quote_id: params[:quote_id].to_i, character_id: params[:id].to_i, user_id: session[:user_id]}
         FavoriteQuote.create(favoritequote)
+        redirect "/characters/#{params[:id]}"
       else
-      binding.pry
+        favoritequote = FavoriteQuote.all.find_by({character_id: params[:id].to_i, user_id: session[:user_id]})
+        favoritequote.update({quote_id: params[:quote_id].to_i})
+        redirect "/characters/#{params[:id]}"
       end
     else
-      redirect :'quotes/show'
+      redirect "/characters/#{params[:id]}/quotes"
     end
   end
 

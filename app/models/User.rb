@@ -2,9 +2,9 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :comments
-  has_many :favoritequotes
-  has_many :quotes, through: :favoritequotes
-  has_many :characters, through: :favoritequotes
+  has_many :favorite_quotes
+  has_many :quotes, through: :favorite_quotes
+  has_many :characters, through: :favorite_quotes
   has_many :characters, through: :comments
   validates :username, uniqueness: :true # failure = self.errors.full_messages.to_sentence = "Username has already been taken"
   validates :username, presence: true 
