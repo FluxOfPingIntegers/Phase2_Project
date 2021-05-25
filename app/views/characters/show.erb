@@ -1,12 +1,11 @@
 
-<h1><%= @character.name %></h1><br>
+<h1><%= @character.name %></h1>
 <img src="<%= @character.img %>" alt="Image not available">
-<br>
+<h2>Click <a href="/characters/<%= @character.id %>/quotes">here</a> for a list of movie quotes from this character.</h2>
 <h3>Click <a href="/characters/<%= @character.id %>/comments">here</a> for a list of all of this characters comments from fans!</h3>
 <% if !@character.comments.empty? %>
   <p>Here is the most recent comment from a fan</p>
   <u><strong><%= @character.comments[-1].user.username %></strong>: <%= @character.comments[-1].content %></u>
-  <br>
   <form action="/characters/<%= @character.id %>/comments" method="post">
     <label for="content">Your comment:</label><br>
     <input type="text" id="content" name="comment[content]"><br>
@@ -15,6 +14,6 @@
     <input type="submit" value="Submit">
   </form>
 <% else %>
-    <h3>This character currently has no comments!<h3><br>
+    <h3>This character currently has no comments!<h3>
     <p>Would you like to be the first to comment??? Click <a href="/characters/<%=@character.id%>/comments/new">here</a>!!!</p>
 <% end %>
