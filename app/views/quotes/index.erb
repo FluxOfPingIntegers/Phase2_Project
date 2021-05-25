@@ -1,0 +1,9 @@
+<h1>Here are all the favorite quotes for <a href="/user/<%=@user.id%>"><%=@user.username%></a></h1>
+  <% if !@user.quotes.empty? %>
+    <% @user.quotes.each do |quote|%>
+    <h3><a href="/characters/<%=quote.character.id%>/quotes"><%= quote.character.name %></a></h3>
+    <p><%= quote.content%></p>
+    <% end %>
+    <% else %>
+    <p>You have not selected any quotes yet! please select one from our list of <a href="/characters">characters</a></p>
+    <% end %>

@@ -59,7 +59,14 @@ class UsersController < ApplicationController
     end   
   end
 
-
+  get '/user/:id/quotes' do
+    if logged_in?
+      @user = User.find(session[:user_id])
+      erb :'quotes/index'
+    else
+      redirect "/login"
+    end
+  end
 
   post "/sessions" do
     user = User.find_by_username(params["user"]["username"])
