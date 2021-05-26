@@ -16,19 +16,19 @@ class User < ActiveRecord::Base
   def rank
     rank = self.quotes.size + self.comments.size
     case rank
-    when 0..9
+      when 0..9
       "Newb"
-    when 10..19
+      when 10..19
       "Ranger"
-    when 20..39
+      when 20..39
       "Maiar"
-    when 40..79
+      when 40..79
       "Istari"
-    when 80..99
+      when 80..99
       "Valar"
-    when 100
+      when 100
       "Iluvatar"
-    else
+      else
       "Nerd"
     end
 
