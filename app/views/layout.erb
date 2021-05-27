@@ -34,12 +34,12 @@ lie.::One  `. ``:::::::::'' ,'    Ring::to
 
   <nav>
   <% if logged_in? %>
-    Currently signed in as <strong><%= current_user.username %></strong>, <a href="/user/<%= current_user.id.to_s %>">View Profile</a>
+    Signed in as <strong><%= current_user.username %></strong>, <a href="/user/<%= current_user.id.to_s %>">View Profile</a>
      OR <a href="/logout">Log Out</a>
   <% else %>
     <a href="/user/new">Sign Up!</a> OR <a href="/login">Login!</a>
   <% end %>
-    | <a href="/">Home<a> | <a href="/characters">View All Characters</a>
+    | <a href="/">Home</a> | <a href="/characters">View All Characters</a>
   </nav>
 
   <div class="border" id="border">

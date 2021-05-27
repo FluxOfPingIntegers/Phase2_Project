@@ -51,6 +51,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     if user == current_user
       user.comments.destroy_all
+      user.favorite_quotes.destroy_all
       user.destroy
       session.clear
       redirect "/"
