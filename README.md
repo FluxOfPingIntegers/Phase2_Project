@@ -9,7 +9,7 @@ Current build status: Under development
 ## Getting Started
 
 * Step 1:
-You will need an API key from The One API ( https://the-one-api.dev/ ) this requires entering a valid email and registering by creating a password.  The key will be referenced in this code as:
+You will need an API key from [The One API](https://the-one-api.dev/) this requires entering a valid email and registering by creating a password.  The key will be referenced in this code as:
 ‘’’
 ENV[“KEY”]
 ‘’’
