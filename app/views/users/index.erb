@@ -2,5 +2,6 @@
 <ul>
   <% @users.each do |user| %>
     <li><strong><%= user.username %></strong> Rank: <%= user.rank %></li>
+        <p>You have <%=10 - (user.comments.size + user.quotes.size) %> to reach Ranger </p>
   <% end %>
 </ul>
