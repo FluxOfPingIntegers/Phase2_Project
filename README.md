@@ -1,4 +1,4 @@
-## The Prancing Pages
+# The Prancing Pages
 
 This is a web builder project using Sinatra to generate web pages relating to Tolkien’s masterpieces.  Though the LOTR movies are referenced, the ‘Hobit’ movies will be excluded from this for personal reasons.
 
@@ -6,7 +6,7 @@ Current build status: Under development
 
 
 
-# Getting Started
+## Getting Started
 
 * Step 1:
 You will need an API key from The One API ( https://the-one-api.dev/ ) this requires entering a valid email and registering by creating a password.  The key will be referenced in this code as:
@@ -48,7 +48,7 @@ Outside Sources Referenced For Data
 
 
 
-Installation
+## Installation
 
 * First
 You will need developer software, I used Visual Studio Code.  Depending on your operating system you should follow these instructions:
@@ -75,20 +75,20 @@ code .
 Finally
 you are ready to proceed to the Getting Started section of this README
 
-# Contribute
+## Contribute
   This is a project I am building for school (and for fun) and I am not currently looking for contributors.  This may change in the future though!
 
-# Author
+## Author
 -  Ryan Schleck – Flatiron student
 
-# Acknowledgments
+## Acknowledgments
 
     • The very supportive slack community at Flatiron
 
-# Tech/Gems used
+## Tech/Gems used
     • Ruby
     • All Ruby gems can be found in the Gemfile
 
 
-# License
+## License
 [MIT](https://choosealicense.com/licenses/mit/)
