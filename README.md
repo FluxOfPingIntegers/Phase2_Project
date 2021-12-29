@@ -10,13 +10,13 @@ Current build status: Under development
 
 * Step 1:
 You will need an API key from [The One API](https://the-one-api.dev/) this requires entering a valid email and registering by creating a password.  The key will be referenced in this code as:
-‘’’
+```
 ENV[“KEY”]
-‘’’
+```
 Therefore within your hidden .env file that you’ve used the dotenv gem to hide as per [these](https://www.rubydoc.info/gems/dotenv/2.0.0) instructions, you will assign this hash key as:
-‘’’
+```
 KEY=YOUR_PERSONAL_API_KEY_FROM_THE_ONE_API_HERE
-‘’’
+```
 
 * Step 2:
 You will also need to set a password for the sessions hash within you .env file.  This password for your sessions hash is referenced in this code as:
